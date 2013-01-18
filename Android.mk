@@ -20,3 +20,11 @@ LOCAL_JAVA_RESOURCE_DIRS := res
 LOCAL_MODULE := nist-pkix-tests
 LOCAL_ADDITIONAL_DEPENDENCY := $(LOCAL_PATH)/Android.mk
 include $(BUILD_STATIC_JAVA_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_JAVA_RESOURCE_DIRS := res
+LOCAL_MODULE := nist-pkix-tests-host
+LOCAL_JAVA_LIBRARIES := junit
+LOCAL_ADDITIONAL_DEPENDENCY := $(LOCAL_PATH)/Android.mk
+include $(BUILD_HOST_JAVA_LIBRARY)
